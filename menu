@@ -12,22 +12,26 @@ select opt in "${options[@]}"
 do
 	case $opt in
 		"Create user")
-			echo "pase..........."
 
 				read -p "Enter username : " username
-				read -s -p "Enter password : " password
-
 				eval sudo adduser $username
-				echo $password
+			
 			;;
 		"Modify user")
-			echo "you chose choice 2"
+				read -p "Enter username : " username
+				eval sudo usermod $username
+				echo "The user was modify"
 			;;
 		"Delete user")
-			echo "you chose choice 3"
+				read -p "Enter username : " username
+				eval sudo userdel $username
+				echo "The user was delete"
 			;;
 		"Stablish password")
-
+				groupadd newgroup
+				read -p "Enter username : " username
+				eval sudo userdel $username
+				echo "The user was delete"
 			;;
 		"Create group")
 
